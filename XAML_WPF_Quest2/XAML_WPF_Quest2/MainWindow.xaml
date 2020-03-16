@@ -9,39 +9,40 @@
         Background="#FF0D1217"
         Foreground="Black">
     <Grid VerticalAlignment="Top" HorizontalAlignment="Center">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="300"/>
-            <ColumnDefinition Width="300"/>
-            <ColumnDefinition Width="300"/>
+        <Grid>
+            <TextBox Name="nameOfInfected" Margin="-21,0,-37.5,10"  VerticalAlignment="Center"/>
+        </Grid>
+        <Grid VerticalAlignment="Bottom">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="36*"/>
+                <ColumnDefinition Width="29*"/>
+                <ColumnDefinition Width="8*"/>
+            </Grid.ColumnDefinitions>
+            <ComboBox HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="133.13" x:Name="Behavior" Foreground="#FF829A9E" Margin="-22,0,-39,-28.5" Grid.ColumnSpan="3">
+                <ComboBox.Background>
+                    <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                        <GradientStop Color="#FFF0F0F0" Offset="0"/>
+                        <GradientStop Color="#FFE6EDF3" Offset="1"/>
+                    </LinearGradientBrush>
+                </ComboBox.Background>
+                <ComboBoxItem Content="Runner" Foreground="#FF46BBCF"/>
+                <ComboBoxItem Content="Stalker" Foreground="#FF46BBCF"/>
+                <ComboBoxItem Content="Clicker" Foreground="#FF46BBCF"/>
+                <ComboBoxItem Content="Bloater" Foreground="#FF46BBCF"/>
+            </ComboBox>
+        </Grid>
+        <Grid>
+            <Button x:Name="AddInfectedButton"  HorizontalAlignment="Center" VerticalAlignment="Bottom"
+               Content="﻿Add Infected"
+               Click="AddInfectedButton_Click" Margin="10.5,0,-10.5,-52.96" Foreground="#FF9ADBE6" BorderBrush="#FF242C32" Background="Black"
+            />
+        </Grid>
 
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="auto"></RowDefinition>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="Auto"/>
-        </Grid.RowDefinitions>
-        <TextBox Name="nameOfInfected" Grid.Row="0" Grid.Column="1" Margin="0,6.024,0,10" 
-        />
-        <ComboBox Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Top" Width="133.13" x:Name="Behavior" Foreground="#FF829A9E" Margin="-22,0,-39,0">
-            <ComboBox.Background>
-                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
-                    <GradientStop Color="#FFF0F0F0" Offset="0"/>
-                    <GradientStop Color="#FFE6EDF3" Offset="1"/>
-                </LinearGradientBrush>
-            </ComboBox.Background>
-            <ComboBoxItem Content="Runner" Foreground="#FF46BBCF"/>
-            <ComboBoxItem Content="Stalker" Foreground="#FF46BBCF"/>
-            <ComboBoxItem Content="Clicker" Foreground="#FF46BBCF"/>
-            <ComboBoxItem Content="Bloater" Foreground="#FF46BBCF"/>
-        </ComboBox>
 
-        <Button x:Name="AddInfectedButton" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center"
-           Content="﻿Add Infected"
-           Click="AddInfectedButton_Click" Margin="9,31.96,-9,-31.96" Foreground="#FF9ADBE6" BorderBrush="#FF242C32" Background="Black"
-        />
-
-        <ListBox Name="listInfected" Grid.Row="2" Grid.Column="1"
-                 Margin="-118,51.134,-160.506,-353.432" Background="#FFEBF5F7" Grid.ColumnSpan="1" />
+        <Grid HorizontalAlignment="Center" VerticalAlignment="Bottom">
+            <ListBox Name="listInfected" Grid.Row="0" Grid.Column="0" 
+                 Margin="-133,64.634,-145.506,-366.932" Background="#FFEBF5F7" Grid.ColumnSpan="1" />
+        </Grid>
 
     </Grid>
 </Window>
